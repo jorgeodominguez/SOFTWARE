@@ -15,7 +15,7 @@ COLOR=[
 
 class Articulos(models.Model):
     nombre=models.CharField(max_length=100)
-    descripcion=models.TextField('Descripción')
+    descripcion=models.TextField('Descripción',null=True,blank=True)
     stock=models.IntegerField()
     presentacion=models.CharField('Presentación',max_length=1,choices=PRESENTACION)
     color=models.CharField(max_length=1,choices=COLOR)
