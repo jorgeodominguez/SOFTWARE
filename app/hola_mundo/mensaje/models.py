@@ -20,6 +20,9 @@ class Articulos(models.Model):
     presentacion=models.CharField('Presentación',max_length=1,choices=PRESENTACION)
     color=models.CharField(max_length=1,choices=COLOR)
 
+    def __str__(self):
+        return self.nombre
+
 
 
 # Create your models here.
