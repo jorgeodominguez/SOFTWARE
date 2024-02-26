@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body align="center">
+    <div align="center">
+        <form method="post">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="number" name="resultado" id="">
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="datos(this.textContent)">AC</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">+/-</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">%</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">/</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="datos(this.textContent)">7</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">8</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">9</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">X</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="datos(this.textContent)">4</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">5</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">6</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="datos(this.textContent)">1</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">2</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">3</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">+</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button type="button" onclick="datos(this.textContent)" style="width: 100%;">0</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">.</button></td>
+            <td><button type="button" onclick="datos(this.textContent)">=</button></td>
+            <input type="hidden" name="num1">
+            <input type="hidden" name="num2">
+            <input type="hidden" name="operacion">
+
+        </tr>
+    </table>
+</form>
+<script>
+    function datos(valor){
+        var form=document.forms[0];
+        form.resultado.value=form.resultado.value+valor;
+    }
+</script>
+</div>
+</body>
+</html>
