@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from articulos.models import Articulos
 
-# Create your views here.
+def lista_articulos(request):
+    articulos=Articulos.objects.all()
+
+    return render(request,'articulos.html',{'articulos':articulos})
+
+def eliminar_articulos(request,id):
+    Articulos.objects.get(id=id).delete()
+    return redirect('lista_articulos')
