@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Artículos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block contenido %}
     <h1>lista de Artículos</h1>
     <a href="{% url 'nuevo_articulos' %}">Nuevo artículo</a>
     <table width="100%" border="1">
@@ -47,5 +42,4 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+{% endblock contenido %}
