@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo artículo</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Nuevo Articulo
+{% endblock titulo %}
+
+{% block contenido %}
     <h1>Nuevo artículo</h1>
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Agregar">
-        <a href="{% url 'lista_articulos' %}">Cancelar</a>
+        <table>
+        {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Agregar">
+        <a class="btn btn-danger" href="{% url 'lista_articulos' %}">Cancelar</a>
     </form>
-</body>
-</html>
+{% endblock contenido %}
