@@ -43,6 +43,21 @@ services:
     ports:
       - 3320:3306
 
+  db-proyecto:
+    image: mariadb
+    container_name: proyecto-db
+    #restart: always
+    environment:
+      MYSQL_DATABASE: proyecto
+      MYSQL_USER: proyecto_user
+      MYSQL_PASSWORD: admin12345
+      MYSQL_ROOT_PASSWORD: admin12345
+    volumes:
+      - db-proyecto:/var/lib/mysql
+    ports:
+      - 3330:3306
+
 volumes:
   db-videojuegos:
   db-comisiones:
+  db-proyecto:

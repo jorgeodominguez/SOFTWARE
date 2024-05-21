@@ -1,7 +1,7 @@
-from django.shortcuts import render,redirect
-from django.urls import reverse_lazy
-from django.views.generic import ListView,TemplateView
-from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from django.shortcuts import render,redirect # type: ignore
+from django.urls import reverse_lazy # type: ignore
+from django.views.generic import ListView,TemplateView # type: ignore
+from django.views.generic.edit import CreateView,UpdateView,DeleteView # type: ignore
 
 from articulos.models import Articulos, Categoria
 
