@@ -4,7 +4,7 @@ from articulos.forms import FormArticulo
 
 def lista_articulos(request):
     articulos=Articulos.objects.all()
-
+    
     return render(request,'articulos.html',{'articulos':articulos})
 
 def eliminar_articulos(request,id):

@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    Nueva Categoria
+{{accion}} Categoria
 {% endblock titulo %}
 
 {% block contenido %}
-    <h1>Nuevo Categoria</h1>
+    <h1>{{accion}} Categoria</h1>
     <form method="post">
         {% csrf_token %}
         <table>
         {{form.as_table}}
         </table>
         <br>
-        <input type="submit" class="btn btn-primary" value="Agregar">
+        <input type="submit" class="btn btn-primary" value="Guardar">
         <a class="btn btn-danger" href="{% url 'categorias_list' %}">Cancelar</a>
     </form>
 {% endblock contenido %}
