@@ -7,11 +7,19 @@ class Form_detalle_compra(forms.ModelForm):
         #fields=['nombre','genero','stock']
         fields='__all__'
 
+        widgets = {
+            'fecha': forms.DateInput(attrs={'type':'date'}),
+        }
+
 class Form_compra(forms.ModelForm):
     class Meta:
         model=Compra
         #fields=['nombre','genero','stock']
         fields='__all__'
+
+        widgets = {
+            'fecha': forms.DateInput(attrs={'type':'date'}),
+        }
 
 class Form_proveedor(forms.ModelForm):
     class Meta:
