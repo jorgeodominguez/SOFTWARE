@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+    <form method="post" class="form">
+        {% csrf_token %}
+        <p>¿Deseas eliminar la Marca ? </p>
+        <div class="alert alert-warning" role="alert">
+            {{object}}
+          </div>
+        <input type="submit" value="Eliminar" class="btn btn-danger">
+        <a class="btn btn-warning" href="{% url 'list_marcas' %}">Regresar</a>
+    </form>
+{% endblock contenido %}
+    

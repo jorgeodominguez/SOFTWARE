@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+{{accion}} Compra
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>{{accion}} Compra</h1>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Guardar">
+        <a class="btn btn-danger" href="{% url 'list_detalle_compras' %}">Cancelar</a>
+    </form>
+{% endblock contenido %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Detalles de Compras
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Detalles de Compras</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Llanta</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Fecha</th>
+                <th>Validacion</th>
+                <th>Observacion</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for detalle_compra in object_list %}
+            <tr>
+                <td>{{detalle_compra.articulo.medida}} {{detalle_compra.articulo.rin}} {{detalle_compra.marca.marca}} {{detalle_compra.marca.disenio}}</td>
+                <td>{{detalle_compra.compra_id}}</td>
+                <td>{{detalle_compra.costo}}</td>
+                <td>{{detalle_compra.fecha}}</td>
+                <td>{{detalle_compra.validacion}}</td>
+                <td>{{detalle_compra.observacion}}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'editar_detalle_compras' detalle_compra.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm"  href="{% url 'eliminar_detalle_compras' detalle_compra.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">
+                    <p>No existen Datos</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

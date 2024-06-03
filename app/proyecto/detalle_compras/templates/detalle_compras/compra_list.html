@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Compras
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Compras</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Proveedor</th>
+                <th>Folio factura</th>
+                <th>Fecha</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compra in object_list %}
+            <tr>
+                <td>{{compra.proveedor}}</td>
+                <td>{{compra.folio}}</td>
+                <td>{{compra.fecha}}</td>
+                <td>{{compra.total}}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'editar_compras' compra.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm"  href="{% url 'eliminar_compras' compra.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">
+                    <p>No existen Datos</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Proveedores
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Proveedores</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No. Proveedor</th>
+                <th>Nombre</th>
+                <th>RFC</th>
+                <th>Direccion</th>
+                <th>Estado</th>
+                <th>Telefono</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in object_list %}
+            <tr>
+                <td>{{proveedor.numero}}</td>
+                <td>{{proveedor.nombre}}</td>
+                <td>{{proveedor.rfc}}</td>
+                <td>{{proveedor.direccion}}</td>
+                <td>{{proveedor.estado}} {{proveedor.municipio}}</td>
+                <td>{{proveedor.telefono}}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'editar_proveedores' proveedor.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm"  href="{% url 'eliminar_proveedores' proveedor.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">
+                    <p>No existen Datos</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

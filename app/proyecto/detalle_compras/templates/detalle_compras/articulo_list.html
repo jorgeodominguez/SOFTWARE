@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Articulos
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Articulos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Clave</th>
+                <th>Llanta</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for articulo in object_list %}
+            <tr>
+                <td>{{articulo.clave}}</td>
+                <td>{{articulo.medida}} {{articulo.rin}} {{articulo.marca.marca}} {{articulo.marca.disenio}}</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="{% url 'editar_articulos' articulo.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm"  href="{% url 'eliminar_articulos' articulo.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">
+                    <p>No existen Datos</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}
